@@ -1,5 +1,6 @@
 let heartCount = parseInt(document.getElementById("heart-count").innerText);
 let copyCount = parseInt(document.getElementById("copy-count").innerText);
+let coin = document.getElementById("coin-count");
 
 // heart button functionality
 const hearts = document.getElementsByClassName("heart-btn");
@@ -14,8 +15,27 @@ for (let heart of hearts) {
 const copys = document.getElementsByClassName("copy-btn");
 for (let copy of copys) {
   copy.addEventListener("click", function () {
-    console.log('" coppy"');
+    alert("coppy");
     let totalCopyCount = ++copyCount;
     document.getElementById("copy-count").innerText = totalCopyCount;
+  });
+}
+
+// coin button functionality
+const coins = document.getElementsByClassName("call-btn");
+for (let coin of coins) {
+  coin.addEventListener("click", function () {
+    // alert("calling");
+    let currentCoins = parseInt(
+      document.getElementById("coin-count").innerText
+    );
+
+    let finalCoin = currentCoins - 20;
+    if (finalCoin < 20) {
+      alert("You don't have enough coins. You cun't call");
+      return;
+    }
+
+    document.getElementById("coin-count").innerText = finalCoin;
   });
 }
