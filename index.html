@@ -13,7 +13,40 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <h1 class="text-5xl">Emergency Services</h1>
+    <!-- navbar start here -->
+    <nav class="flex justify-between items-center w-[90%] mx-auto my-5">
+      <!-- logo div -->
+      <div class="flex gap-3">
+        <img class="w-14" src="./assets/logo.png" alt="logo" />
+
+        <h1 class="text-[#006747] text-2xl font-bold hidden lg:block">
+          Emergency <br />
+          Service
+        </h1>
+      </div>
+      <!-- heart, coin and copy count div -->
+      <div class="flex gap-3 h-10">
+        <div
+          class="bg-[#ECFFF0] flex justify-evenly gap-3 items-center w-20 rounded-3xl"
+        >
+          <span class="text-lg font-semibold">0</span
+          ><img class="w-6" src="./assets/heart.png" alt="heart" />
+        </div>
+        <div
+          class="bg-[#ECFFF0] w-20 flex justify-evenly rounded-3xl gap-3 items-center"
+        >
+          <span class="text-lg font-semibold">0</span
+          ><img class="w-6" src="./assets/coin.png" alt="coin" />
+        </div>
+        <div
+          class="bg-[#00A63E] w-20 rounded-3xl flex items-center justify-evenly text-lg text-white font-semibold"
+        >
+          <span>0</span>Copy
+        </div>
+      </div>
+    </nav>
+
+    <!-- javascript file -->
     <script src="index.js"></script>
   </body>
 </html>
