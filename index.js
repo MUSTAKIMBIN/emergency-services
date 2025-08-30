@@ -38,11 +38,19 @@ for (let coin of coins) {
     const now = new Date();
     const currentTime = now.toLocaleTimeString();
 
-    alert("You are calling " + serviceName + " : " + hotlineNumber);
-
     let currentCoins = parseInt(
       document.getElementById("coin-count").innerText
     );
+
+    //coni count condition
+    let finalCoin = currentCoins - 20;
+    if (finalCoin < 20) {
+      alert("You don't have enough coins. You cun't call");
+      return;
+    }
+
+    alert("You are calling " + serviceName + " : " + hotlineNumber);
+
     // call history
     const historyDiv = document.createElement("div");
     historyDiv.innerHTML = ` <div
@@ -55,13 +63,6 @@ for (let coin of coins) {
           <p class="text-sm text-gray-500 font-semibold">${currentTime}</p>
         </div>`;
     callHistory.appendChild(historyDiv);
-
-    //coni count condition
-    let finalCoin = currentCoins - 20;
-    if (finalCoin < 20) {
-      alert("You don't have enough coins. You cun't call");
-      return;
-    }
 
     document.getElementById("coin-count").innerText = finalCoin;
   });
