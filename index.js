@@ -18,9 +18,6 @@ for (let copy of copys) {
     let totalCopyCount = ++copyCount;
     document.getElementById("copy-count").innerText = totalCopyCount;
 
-    // to do
-    // const textElement = document.getElementById("hotline-text");
-
     const card = this.closest(".card");
     const text = card.querySelector(".hotline-text").innerText;
 
@@ -34,7 +31,10 @@ for (let copy of copys) {
 const coins = document.getElementsByClassName("call-btn");
 for (let coin of coins) {
   coin.addEventListener("click", function () {
-    // alert("calling");
+    const card = this.closest(".card");
+    const hotlineNumber = card.querySelector(".hotline-text").innerText;
+    const serviceName = card.querySelector(".service-name").innerText;
+    alert("You are calling " + serviceName + " : " + hotlineNumber);
     let currentCoins = parseInt(
       document.getElementById("coin-count").innerText
     );
