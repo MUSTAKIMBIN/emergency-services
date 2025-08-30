@@ -34,11 +34,29 @@ for (let coin of coins) {
     const card = this.closest(".card");
     const hotlineNumber = card.querySelector(".hotline-text").innerText;
     const serviceName = card.querySelector(".service-name").innerText;
+    const callHistory = document.getElementById("call-history");
+    const now = new Date();
+    const currentTime = now.toLocaleTimeString();
+
     alert("You are calling " + serviceName + " : " + hotlineNumber);
+
     let currentCoins = parseInt(
       document.getElementById("coin-count").innerText
     );
+    // call history
+    const historyDiv = document.createElement("div");
+    historyDiv.innerHTML = ` <div
+          class="flex justify-between items-center bg-gray-50 p-3 my-2 rounded-md"
+        >
+          <div>
+            <h1 class="text-xl font-semibold">${serviceName}</h1>
+            <h3 class="text-base text-gray-400 font-semibold">${hotlineNumber}</h3>
+          </div>
+          <p class="text-sm text-gray-500 font-semibold">${currentTime}</p>
+        </div>`;
+    callHistory.appendChild(historyDiv);
 
+    //coni count condition
     let finalCoin = currentCoins - 20;
     if (finalCoin < 20) {
       alert("You don't have enough coins. You cun't call");
