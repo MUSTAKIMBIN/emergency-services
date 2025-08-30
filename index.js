@@ -15,9 +15,18 @@ for (let heart of hearts) {
 const copys = document.getElementsByClassName("copy-btn");
 for (let copy of copys) {
   copy.addEventListener("click", function () {
-    alert("coppy");
     let totalCopyCount = ++copyCount;
     document.getElementById("copy-count").innerText = totalCopyCount;
+
+    // to do
+    // const textElement = document.getElementById("hotline-text");
+
+    const card = this.closest(".card");
+    const text = card.querySelector(".hotline-text").innerText;
+
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied: " + text);
+    });
   });
 }
 
