@@ -1,6 +1,8 @@
 let heartCount = parseInt(document.getElementById("heart-count").innerText);
 let copyCount = parseInt(document.getElementById("copy-count").innerText);
 let coin = document.getElementById("coin-count");
+const clearBtn = document.getElementById("clear-btn");
+const callHistoryDiv = document.getElementById("call-history");
 
 // heart button functionality
 const hearts = document.getElementsByClassName("heart-btn");
@@ -53,7 +55,7 @@ for (let coin of coins) {
 
     // call history
     const historyDiv = document.createElement("div");
-    historyDiv.innerHTML = ` <div
+    historyDiv.innerHTML = ` <div 
           class="flex justify-between items-center bg-gray-50 p-3 my-2 rounded-md"
         >
           <div>
@@ -67,3 +69,9 @@ for (let coin of coins) {
     document.getElementById("coin-count").innerText = finalCoin;
   });
 }
+
+// clear button functionality
+clearBtn.addEventListener("click", function () {
+  // console.log("clear");
+  callHistoryDiv.innerHTML = " ";
+});
